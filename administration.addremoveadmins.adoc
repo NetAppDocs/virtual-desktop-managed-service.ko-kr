@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: administration.addremoveadmins.html 
+summary: VDM에서 관리자 추가 및 제거 
+keywords:  
+---
+= VDM에서 관리자 추가 및 제거
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:keywords: 
+:toc-position: content
+
+
+
+
+== VDM에서 관리자 추가
+
+* 이 프로세스는 NetApp에서 처리합니다
+* 다음 방법 중 하나를 사용하여 NetApp VDM 지원에 문의하십시오.
++
+.. 이메일 지원: VDSsupport@netapp.com
+.. 전화 지원: 844.645.6789
+.. link:https://cloudjumper.zendesk.com["VDM 지원 포털"]
+
+
+* 새 관리자 계정에 대해 다음을 포함하십시오.
++
+.. 파트너 코드
+.. 이름과 성
+.. 이메일 주소입니다
+.. 사용 권한이 에 나와 있는 기본 집합과 다른 경우 link:FAQ.vdsadminpermissions.html["관리자 권한"]
+
+
+
+
+
+
+== VDM에서 관리자를 제거하는 중입니다
+
+* 이 프로세스는 파트너가 처리합니다
++
+.. "Admins" 탭으로 이동합니다
+.. 제거할 관리자의 오른쪽에 있는 작업 점 을 클릭합니다
+.. "삭제"를 클릭합니다.
+.. 확인 상자가 나타나면 "예, 확실합니다"를 클릭합니다.image:administration.addremoveadmins01.png["900,900"]
+
+
+* 궁금한 사항이 있는 경우 다음 방법 중 하나를 사용하여 NetApp VDM 지원에 문의하십시오.
++
+.. 이메일 지원: VDSsupport@netapp.com
+.. 전화 지원: 844.645.6789
+.. link:https://cloudjumper.zendesk.com["VDM 지원 포털"]
+
+
+

@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: users.add.html 
+summary: VDM에서 사용자 액세스 추가 
+keywords:  
+---
+= 사용자 액세스 추가
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:keywords: 
+:toc-position: content
+
+
+
+
+== 새 사용자 생성
+
+.새로운 Active Directory 구축(VDM에 대해 새 Active Directory 도메인이 생성됨)
+. VDS에서 사용자를 생성합니다
++
+.. 작업 영역으로 이동하여 "사용자 및 그룹" 탭을 선택하고 "추가"를 클릭한 다음 "사용자 추가"를 선택합니다.image:users.add01.png["900,900"]
+.. 사용자 정보를 입력한 다음 "사용자 추가"를 클릭합니다.image:users.add02.png["900,900"]
+
+
+. 다음 방법 중 하나를 사용하여 추가 사용자를 NetApp에 알립니다
++
+.. 이메일 지원: VDSsupport@netapp.com
+.. 전화 지원: 844.645.6789
+.. link:https://cloudjumper.zendesk.com["VDM 지원 포털"]
+
+
+. 사용자를 호스트 풀에 할당합니다
++
+.. 사용자 및 그룹 탭에서 호스트 풀에 연결된 사용자 그룹을 클릭합니다. 예를 들어 "kift WVD Shared" 그룹은 VDM의 WVD 공유 호스트 풀에 연결됩니다. "kift WVD Shared"에 추가된 모든 사용자는 "WVD Shared" 호스트 풀에서 세션 호스트에 대한 액세스 권한을 할당합니다.image:users.add03.png["900,900"]
+.. 사용자 상자의 오른쪽 위에 있는 편집 아이콘을 클릭하고 "사용자 추가"를 클릭합니다.image:users.add04.png["900,900"]
+.. 추가할 사용자 옆의 확인란을 선택하고 "계속"을 클릭합니다.image:users.add05.png["900,900"]
+.. 자세한 지침은 을 참조하십시오 link:users.assigntoappgroup.html["여기"]
+
+
+
+
+.기존 Active Directory 구축(VDM이 기존 Active Directory에 연결 중)
+. 일반적으로 하는 것처럼 Active Directory에서 사용자를 만듭니다
+. 배포에 나열된 Active Directory 그룹에 사용자를 추가합니다image:users.add06.png["900,900"]
+. cloudworkspace를 설정합니다
+. 다음 방법 중 하나를 사용하여 추가 사용자를 NetApp에 알립니다
++
+.. 이메일 지원: VDSsupport@netapp.com
+.. 전화 지원: 844.645.6789
+.. link:https://cloudjumper.zendesk.com["VDM 지원 포털"]
+
+
+. 사용자를 호스트 풀에 할당합니다
++
+.. 사용자 및 그룹 탭에서 호스트 풀에 연결된 사용자 그룹을 클릭합니다. 예를 들어 "kift WVD Shared" 그룹은 VDM의 WVD 공유 호스트 풀에 연결됩니다. "kift WVD Shared"에 추가된 모든 사용자는 "WVD Shared" 호스트 풀에서 세션 호스트에 대한 액세스 권한을 할당합니다.image:users.add03.png["900,900"]
+.. 사용자 상자의 오른쪽 위에 있는 편집 아이콘을 클릭하고 "사용자 추가"를 클릭합니다.image:users.add04.png["900,900"]
+.. 추가할 사용자 옆의 확인란을 선택하고 "계속"을 클릭합니다.image:users.add05.png["900,900"]
+.. 자세한 지침은 을 참조하십시오 link:users.assigntoappgroup.html["여기"]
+
+
+

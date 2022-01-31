@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: users.remove.html 
+summary: VDM에서 사용자 액세스 제거 
+keywords:  
+---
+= 사용자 액세스를 제거하는 중입니다
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:keywords: 
+:toc-position: content
+
+
+
+
+== 사용자를 제거하는 중입니다
+
+.새로운 Active Directory 구축(VDM에 대해 새 Active Directory 도메인이 생성됨)
+. VDM에서 사용자를 삭제합니다
++
+.. 작업 영역으로 이동하여 "사용자 및 그룹" 탭을 선택하고 삭제할 사용자 옆에 있는 작업 점을 클릭한 다음 "삭제"를 클릭합니다.image:users.remove01.png["900,900"]
+.. 삭제 지연 및 디렉터리에서 삭제 옵션이 포함된 팝업 창이 나타납니다image:users.remove02.png["900,900"]
++
+... 삭제 지연 옵션은 사용자를 삭제하기 전에 90분 정도 대기하며, 이 경우 프로세스가 취소됩니다. 이 확인란을 선택하는 것이 좋습니다.
+... 디렉터리에서 삭제 옵션을 선택하면 Active Directory 사용자 계정이 삭제됩니다. 이 상자를 선택해야 합니다.
+
+
+
+
+. 아래 방법 중 하나를 사용하여 사용자 제거를 NetApp에 알립니다
++
+.. 이메일 지원: VDSsupport@netapp.com
+.. 전화 지원: 844.645.6789
+.. link:https://cloudjumper.zendesk.com["VDM 지원 포털"]
+
+
+
+
+.기존 Active Directory 구축(VDM이 기존 Active Directory에 연결 중)
+. VDM에서 사용자를 삭제합니다
++
+.. 작업 영역으로 이동하여 "사용자 및 그룹" 탭을 선택하고 삭제할 사용자 옆에 있는 작업 점을 클릭한 다음 "삭제"를 클릭합니다.image:users.remove01.png["900,900"]
+.. 삭제 지연 및 디렉터리에서 삭제 옵션이 포함된 팝업이 나타납니다image:users.remove03.png["900,900"]
++
+... 삭제 지연 옵션은 사용자를 삭제하기 전에 90분 정도 대기하며, 이 경우 프로세스가 취소됩니다. 이 확인란을 선택하는 것이 좋습니다.
+... 디렉터리에서 삭제 옵션을 선택하면 Active Directory 사용자 계정이 삭제됩니다. 이 상자를 선택하지 않는 것이 좋습니다. Active Directory에서 계정을 삭제하려면 조직의 사용자 계정 삭제 프로세스를 따라야 합니다.
+
+
+
+
+. 아래 방법 중 하나를 사용하여 사용자 제거를 NetApp에 알립니다
++
+.. 이메일 지원: VDSsupport@netapp.com
+.. 전화 지원: 844.645.6789
+.. link:https://cloudjumper.zendesk.com["VDM 지원 포털"]
+
+
+

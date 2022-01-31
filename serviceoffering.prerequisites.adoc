@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: serviceoffering.prerequisites.html 
+summary: VDM 사전 요구 사항 
+keywords:  
+---
+= VDM(Virtual Desktop Managed Service) 사전 요구 사항
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:keywords: 
+:toc-position: content
+
+
+
+
+== M365 라이선스
+
+VDM은 Microsoft WVD(Windows Virtual Desktop) 기술을 사용하여 구축됩니다. WVD 전제 조건을 사용하려면 최종 사용자에게 특정 Microsoft 365(M365) 라이선스를 할당해야 합니다. 이 라이센스는 VDM 서브스크립션에 포함되지 않으며 NetApp은 이 라이센스를 판매하거나 제공하지 않습니다.
+
+M365/WVD 라이선스 규정 준수는 고객 회사, 파트너 회사 및/또는 M365 공급업체에 계속 적용됩니다.
+
+VDM에 대한 WVD 라이선스를 지원하는 다양한 M365 계획이 있으며 자세한 내용은 을 참조하십시오 link:https://azure.microsoft.com/en-us/pricing/details/virtual-desktop/["여기 에서 찾을 수 있습니다"].
+
+
+
+== M365/Azure AD 테넌트
+
+고객이 기존 Azure AD 테넌트를 가지고 있어야 합니다. Microsoft 365는 동일한 Azure AD 테넌트 구조를 기반으로 하므로 위의 M365 라이선스 요구 사항을 충족하는 것도 이 요구 사항을 충족합니다.
+
+
+
+== CSP 리셀러 관계
+
+NetApp은 Microsoft와의 CSP 관계를 활용하여 VDM을 전용 Azure 구독에 구축합니다. 이 구독을 배포하려면 NetApp은 고객의 Azure AD 테넌트와 리셀러 관계를 설정해야 합니다. 고객의 Azure AD 테넌트에 대한 글로벌 관리자가 이 관계를 수락할 수 있는 위치:
+
+https://admin.microsoft.com/Adminportal/Home?invType=ResellerRelationship&partnerId=47c1f6d2-b112-48e0-915f-4304efffb3e8&msppId=0&DAP=true#/BillingAccounts/partner-invitation[]
+
+다중 파트너 기능은 다음과 같은 기능을 제공하지 않습니다.
+
+* 고객의 기존 구독을 변경합니다
+* 고객의 기존 구독 또는 계정 소유권을 이전합니다
+* 기존 구독에 대한 약관 또는 고객의 의무를 변경합니다
+* 구독에 대한 레코드 파트너 변경
+* 자세한 내용: https://docs.microsoft.com/en-us/partner-center/multipartner[]
+
+
+
+
+=== 위임된 관리자 권한
+
+초대 링크(위)에는 위임된 관리자 권한에 대한 요청이 포함되어 있습니다. 수락하면 고객의 Azure AD 테넌트에서 NetApp 글로벌 관리자 및 헬프 데스크 관리자 역할이 부여됩니다.
+
+
+
+== 가상 네트워크 범위
+
+VDM은 Azure의 가상 네트워크에 구축됩니다. 이 네트워크에 사용되는 /20 IP 범위는 해당 환경의 다른 네트워크와 중복될 수 없습니다.
+
+VDM 가상 네트워크와 다른 고객 네트워크 간에 네트워크 접속을 추가하는 모든 시나리오에서 다른 네트워크 IP 범위와 중복되면 VDM이 깨집니다. 따라서 완전히 사용되지 않은/20가지 범위가 VDM 전용으로 사용되는 것이 중요합니다.
+
+/20 네트워크 범위는 다음 IP 범위 중 하나에 있어야 합니다.
+
+* 10.0.0.0 – 10.255.255.255
+* 172.16.0.0 – 172.31.255.255
+* 192.168.0.0 – 192.168.255.255
+
+
+
+
+== VDM 구축 워크시트
+
+고객/파트너는 다음 사이트에서 VDM 구축 워크시트를 작성해야 합니다.https://www.deployvdms.com/[]
+
+
+
+== 기존 AD 통합
+
+VDM을 기존 AD DC(Active Directory 도메인 컨트롤러)와 통합하려면 다음과 같은 몇 가지 추가 사전 요구 사항이 필요합니다.
+
+
+
+=== 로컬 도메인 관리자 자격 증명
+
+통합을 설정하려면 기존 도메인에서 domainjoin 권한이 있는 로컬 도메인 관리자 계정이 필요합니다.
+
+
+
+=== Azure AD 연결
+
+WVD를 사용하려면 Azure AD를 AD Connect를 사용하여 AD DC와 동기화해야 합니다. 아직 설정하지 않은 경우, 이 옵션을 선택합니다 link:https://www.microsoft.com/en-us/download/details.aspx?id=47594["유틸리티"] AD DC에 설치 및 구성해야 합니다.
+
+/==== VNET 피어링을 위한 Network Contributor 역할 /=== VPN 설정을 위한 로컬 게이트웨이 장치 관리자 권한 /== DNS 존(더 많은 기술 정보 필요) /===== 다중 도메인 포레스트, 사용자가 현재 배포 중인 도메인에 있어야 합니다

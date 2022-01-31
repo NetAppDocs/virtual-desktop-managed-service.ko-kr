@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: serviceoffering.servicesummary.html 
+summary: VDM 서비스 오퍼링 요약 
+keywords:  
+---
+= VDM(Virtual Desktop Managed Service) 서비스 요약
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:keywords: 
+:toc-position: content
+
+
+
+
+== 사용자 리소스 할당
+
+
+NOTE: 이 문서에서는 VDM 서비스의 기술 세부 정보를 정확하게 설명합니다. 서비스 세부 정보는 변경될 수 있으며 이 문서는 NetApp과 고객 또는 파트너 간의 기존 계약, 계약 또는 기타 계약에 대한 수정 또는 변경을 나타내지 않습니다.
+
+
+
+=== 공유 사용자(SKU:VDM-subs-shared-user)
+
+공유 사용자 세션은 최대 10개의 사용자 세션이 있는 SHVM(Session Host Virtual Machine)에서 실행됩니다. 할당된 공유 SHVM의 총 개수는 환경에서 공유 사용자 10명당 최소 1개의 공유 SHVM을 보장합니다.
+
+* 공유 사용자당 할당된 리소스: *
+
+* vCPU 코어 8/10분의 1
+* 6.4GiB RAM
+* 25GiB 스토리지
+
+
+* 공유 SHVM 기술 정보: *
+
+* 일반적으로 에서 link:https://docs.microsoft.com/en-us/azure/virtual-machines/ev3-esv3-series["Esv3"],  및  Azure 가상 시스템 제품군
+* 128GiB 표준 SSD OS 디스크
+* 가상 데스크탑용 Windows 10 Enterprise
+* FSLogix에 연결된 컨테이너 사용자 프로필입니다
+* 회사 공유 스토리지를 연결했습니다
+
+
+
+
+=== VDI 사용자(SKU:VDM-SUBS-VDI-USER)
+
+VDI 사용자 세션은 다른 사용자 세션을 동시에 호스팅하지 않는 전용 SHVM(Session Host Virtual Machine)에서 실행됩니다. 총 VDI SHVM 수는 해당 환경의 총 VDI 사용자 수와 같습니다.
+
+* VDI 사용자당 할당된 리소스: *
+
+* vCPU 코어 2개
+* 8GiB RAM
+* 25GiB 스토리지
+
+
+* VDI SHVM 기술 정보: *
+
+* 일반적으로 에서 link:https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series["dsv3"],  및  Azure 가상 시스템 제품군
+* 128GiB 표준 HDD OS 디스크
+* 가상 데스크탑용 Windows 10 Enterprise
+* FSLogix에 연결된 컨테이너 사용자 프로필입니다
+* 회사 공유 스토리지를 연결했습니다
+
+
+
+
+=== GPU 사용자(SKU:VDM-subs-gpu-user)
+
+GPU 사용자 세션은 다른 사용자 세션을 동시에 호스팅하지 않는 전용 SHVM(Session Host Virtual Machine)에서 실행됩니다. 총 GPU SHVM 수는 해당 환경의 총 GPU 사용자 수와 같습니다.
+
+* GPU 사용자당 할당된 리소스: *
+
+* 8GiB GPU RAM
+* 25GiB 스토리지
+
+
+* GPU SHVM 기술 정보: *
+
+* 일반적으로 에서 link:https://docs.microsoft.com/en-us/azure/virtual-machines/nvv3-series["NVv3"] 및  Azure 가상 시스템 제품군
+* 128GiB 표준 HDD OS 디스크
+* 가상 데스크탑용 Windows 10 Enterprise
+* FSLogix에 연결된 컨테이너 사용자 프로필입니다
+* 회사 공유 스토리지를 연결했습니다
+
+
+
+
+== 기타 VDM SKU
+
+
+
+=== 비즈니스 서버(SKU: VDM-Azure-Business-VM)
+
+비즈니스 서버를 환경에 추가하여 애플리케이션과 서비스를 지원할 수 있습니다.
+
+* 각 비즈니스 서버 VM은 최소한 다음과 같이 할당됩니다. *
+
+* vCPU 코어 8개
+* 64GiB RAM
+* 128GiB 표준 SSD OS 디스크
+* Windows Server 2012R2/2016/2019
+* 일반적으로 에서 link:https://docs.microsoft.com/en-us/azure/virtual-machines/ev3-esv3-series["Esv3"],  및  Azure 가상 시스템 제품군
+
+
+
+
+=== 추가 스토리지(SKU: VDM-1TB-스토리지 - HPRCLR)
+
+데이터 스토리지 계층 _ 은(는) VDM 환경을 위한 운영 스토리지 메커니즘으로, Azure 파일 또는 Azure NetApp Files(ANF)에서 실행됩니다. 사용되는 스토리지 기술은 구입한 총 VDM 사용자에 의해 결정됩니다. 1TiB 단위로 용량을 추가할 수 있습니다.
+
+사용자 프로필, 사용자 데이터, 회사 공유, 애플리케이션 데이터 및 데이터베이스는 모두 이 스토리지 서비스에서 실행되어야 합니다. 가능하면 VM 디스크에 데이터를 저장하지 않는 것이 좋습니다.
+
+용량은 사용자당 할당(25GiB/user)과 구입한 추가 TiB 스토리지의 합계입니다.
+
+|===
+| 미터 | link:https://docs.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets#storage-account-scale-targets["Azure 파일 GPv2"] | link:https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["ANF 표준"] | link:https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["ANF 프리미엄"] 
+
+
+| 사용자 수 | 10-49 | 50-249 | 250개 이상 
+
+
+| 최소 크기 | 250GiB | 4TiB | 4TiB 
+
+
+| IOPS | 최대 1,000개 | 최대 250/TiB | 최대 1,000/TiB 
+|===

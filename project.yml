@@ -1,0 +1,39 @@
+---
+settings:
+  name: Virtual Desktop Managed Service
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ko-kr,us-en,ja-jp,zh-cn
+sidebar:
+  entries:
+  - title: VDM 설명서
+    url: "/index.html"
+  - title: 시작하기
+    entries:
+    - title: 필수 구성 요소
+      url: "/serviceoffering.prerequisites.html"
+    - title: 서비스 요약
+      url: "/serviceoffering.servicesummary.html"
+  - title: 자습서
+    entries:
+    - title: 응용 프로그램을 설치합니다
+      url: "/applications.installapplications.html"
+    - title: 배포 VM 이미지를 업데이트합니다
+      url: "/images.updateimages.html"
+    - title: 앱 그룹에 사용자를 할당합니다
+      url: "/users.assigntoappgroup.html"
+    - title: 도메인 관리자 자격 증명을 가져옵니다
+      url: "/administration.pam.html"
+    - title: 사용자 액세스 추가
+      url: "/users.add.html"
+    - title: 사용자 액세스를 제거합니다
+      url: "/users.remove.html"
+    - title: 관리자 추가/제거
+      url: "/administration.addremoveadmins.html"
+  - title: VDM FAQ를 참조하십시오
+    entries:
+    - title: VDS 관리자 권한
+      url: "/FAQ.vdsadminpermissions.html"

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="96f45a5169265d06aeb96ba4d7a88462" category="summary">VDM 서비스 오퍼링 요약</block>
+  <block id="70522576fd7d9f0925f2cd2402000958" category="doc">VDM(Virtual Desktop Managed Service) 서비스 요약</block>
+  <block id="8071162c8da0f29504c0a424813d8b5d" category="section-title">사용자 리소스 할당</block>
+  <block id="13bb5110902d802c85e027ab12a720d6" category="admonition">이 문서에서는 VDM 서비스의 기술 세부 정보를 정확하게 설명합니다. 서비스 세부 정보는 변경될 수 있으며 이 문서는 NetApp과 고객 또는 파트너 간의 기존 계약, 계약 또는 기타 계약에 대한 수정 또는 변경을 나타내지 않습니다.</block>
+  <block id="c701b955dfdc6e4e8a190529f6746e1e" category="section-title">공유 사용자(SKU:VDM-subs-shared-user)</block>
+  <block id="8fad8c69e075fc2661cc81aabb605480" category="paragraph">공유 사용자 세션은 최대 10개의 사용자 세션이 있는 SHVM(Session Host Virtual Machine)에서 실행됩니다. 할당된 공유 SHVM의 총 개수는 환경에서 공유 사용자 10명당 최소 1개의 공유 SHVM을 보장합니다.</block>
+  <block id="0898e2fd1f4443603008d48f7079c9b0" category="paragraph">* 공유 사용자당 할당된 리소스: *</block>
+  <block id="4e425171e3570e45314831ebb1308604" category="list-text">vCPU 코어 8/10분의 1</block>
+  <block id="664d3d9378e9e2a9c16c8e7c60f922f9" category="list-text">6.4GiB RAM</block>
+  <block id="7132ebab180a554b623b31f1cdfc9f34" category="list-text">25GiB 스토리지</block>
+  <block id="f8039904415b55195907fb24d1c456a3" category="paragraph">* 공유 SHVM 기술 정보: *</block>
+  <block id="35eff763be0c4a28131f478c7c9ca164" category="inline-link-macro">Esv3</block>
+  <block id="e4f79b9787dd939692283f7e2d3e0055" category="inline-link-macro">Eav4</block>
+  <block id="b638de3e953add99aed10f2b788118b1" category="inline-link-macro">Easv4</block>
+  <block id="b7b861a49f90a10eb8dfc31f2966ada4" category="list-text">일반적으로 에서 <block ref="ed9cf184a4e673898e740e53c86b379f" category="inline-link-macro-rx"></block>, <block ref="89d1beed2396587db0cfbec9daa997bf" category="inline-link-macro-rx"></block> 및 <block ref="2be2d37ef8c06ff181019e1e04bdcc77" category="inline-link-macro-rx"></block> Azure 가상 시스템 제품군</block>
+  <block id="e08f66ea7c7779e53aadae330f2f06ec" category="list-text">128GiB 표준 SSD OS 디스크</block>
+  <block id="06580f6a8c004936f0620c96a2f49733" category="list-text">가상 데스크탑용 Windows 10 Enterprise</block>
+  <block id="c958b26f95acbc7f0d62d8afe7e53a55" category="list-text">FSLogix에 연결된 컨테이너 사용자 프로필입니다</block>
+  <block id="2cec20f97814ee0af3125fba1c58673c" category="list-text">회사 공유 스토리지를 연결했습니다</block>
+  <block id="fd7a1486cadfbdcd514deb776e0f7789" category="section-title">VDI 사용자(SKU:VDM-SUBS-VDI-USER)</block>
+  <block id="08dae8553f81b438e19b19846fde56f1" category="paragraph">VDI 사용자 세션은 다른 사용자 세션을 동시에 호스팅하지 않는 전용 SHVM(Session Host Virtual Machine)에서 실행됩니다. 총 VDI SHVM 수는 해당 환경의 총 VDI 사용자 수와 같습니다.</block>
+  <block id="8d87e391da5be7757ee01945bd114cb3" category="paragraph">* VDI 사용자당 할당된 리소스: *</block>
+  <block id="99014996950d469f81921dba47998707" category="list-text">vCPU 코어 2개</block>
+  <block id="e3e64e60045c5d89b9f2addc887abdc8" category="list-text">8GiB RAM</block>
+  <block id="35c71bd12d6cd818d6a57162805190c0" category="paragraph">* VDI SHVM 기술 정보: *</block>
+  <block id="13e52e0f9b9e0dd182d82618fdb4316f" category="inline-link-macro">dsv3</block>
+  <block id="cf1d671193d7766ada86fb0c46ea5e1f" category="inline-link-macro">Dav4</block>
+  <block id="dbfca40478ffe4c54584645a377aeaa1" category="inline-link-macro">Dasv4</block>
+  <block id="cea32a3019fc5980c530f844a9636c55" category="list-text">일반적으로 에서 <block ref="9697dce2bcf67114d27237393027d225" category="inline-link-macro-rx"></block>, <block ref="095f2e699aba0331095e70b01fe9667c" category="inline-link-macro-rx"></block> 및 <block ref="3e036509970960bd5056e1b4d52236bd" category="inline-link-macro-rx"></block> Azure 가상 시스템 제품군</block>
+  <block id="537e7ec705664da3e36c58a0855228ff" category="list-text">128GiB 표준 HDD OS 디스크</block>
+  <block id="efdc8ab256c11020561f50283f989b21" category="section-title">GPU 사용자(SKU:VDM-subs-gpu-user)</block>
+  <block id="032f26c6c680e23da95a0768542a01ae" category="paragraph">GPU 사용자 세션은 다른 사용자 세션을 동시에 호스팅하지 않는 전용 SHVM(Session Host Virtual Machine)에서 실행됩니다. 총 GPU SHVM 수는 해당 환경의 총 GPU 사용자 수와 같습니다.</block>
+  <block id="b08470dc26d2c68c8ffe0f05f8476db1" category="paragraph">* GPU 사용자당 할당된 리소스: *</block>
+  <block id="9aff0efcaf7aa8ebcc772798c38c7089" category="list-text">8GiB GPU RAM</block>
+  <block id="e8d94bb007a86c862d791623a75a5b92" category="paragraph">* GPU SHVM 기술 정보: *</block>
+  <block id="6b444377efe5058dab7dce405542b207" category="inline-link-macro">NVv3</block>
+  <block id="ab003bb2af504bdc1890c7156c12f90d" category="inline-link-macro">NVv4</block>
+  <block id="9ffe83ad6819ce8af9df026ee2a12ed3" category="list-text">일반적으로 에서 <block ref="4ea7c48cd6617457bac8cc896bd2553e" category="inline-link-macro-rx"></block> 및 <block ref="0b543f3bc3eca6927ae971a0a3b696e9" category="inline-link-macro-rx"></block> Azure 가상 시스템 제품군</block>
+  <block id="eff88cd2787a7835276dec68d5017f78" category="section-title">기타 VDM SKU</block>
+  <block id="8e9a2b5aade33ca7d989a8ed0803d7cf" category="section-title">비즈니스 서버(SKU: VDM-Azure-Business-VM)</block>
+  <block id="2f8f485c4d84e3dec215d3a46a97d940" category="paragraph">비즈니스 서버를 환경에 추가하여 애플리케이션과 서비스를 지원할 수 있습니다.</block>
+  <block id="833a21998d6bf8cf0bee6bfd9755368e" category="paragraph">* 각 비즈니스 서버 VM은 최소한 다음과 같이 할당됩니다. *</block>
+  <block id="cf9c8960c763aa7c2bce6433c941d296" category="list-text">vCPU 코어 8개</block>
+  <block id="a1e4922c6323d230b8cb5eafbd7a29cc" category="list-text">64GiB RAM</block>
+  <block id="d45e7a12c09e9a60a734fe0605f9b06b" category="list-text">Windows Server 2012R2/2016/2019</block>
+  <block id="0347997734e80a11ba4b7cf64ebecb9c" category="section-title">추가 스토리지(SKU: VDM-1TB-스토리지 - HPRCLR)</block>
+  <block id="edcb3f5efd3f6b86bd2423b4c444f237" category="paragraph">데이터 스토리지 계층 _ 은(는) VDM 환경을 위한 운영 스토리지 메커니즘으로, Azure 파일 또는 Azure NetApp Files(ANF)에서 실행됩니다. 사용되는 스토리지 기술은 구입한 총 VDM 사용자에 의해 결정됩니다. 1TiB 단위로 용량을 추가할 수 있습니다.</block>
+  <block id="9d4ab1afe1fde908af9e0941140ee51c" category="paragraph">사용자 프로필, 사용자 데이터, 회사 공유, 애플리케이션 데이터 및 데이터베이스는 모두 이 스토리지 서비스에서 실행되어야 합니다. 가능하면 VM 디스크에 데이터를 저장하지 않는 것이 좋습니다.</block>
+  <block id="81e8630cd70b11de2e40c88a75df2fb4" category="paragraph">용량은 사용자당 할당(25GiB/user)과 구입한 추가 TiB 스토리지의 합계입니다.</block>
+  <block id="216ab40cda5c7c00ff42a4efb1827d89" category="cell">미터</block>
+  <block id="90bd28628286d0369bc5566d1ad7183d" category="inline-link-macro">Azure 파일 GPv2</block>
+  <block id="83c096dc581b472a9917d93e1fd04742" category="cell"><block ref="83c096dc581b472a9917d93e1fd04742" category="inline-link-macro-rx"></block></block>
+  <block id="2ee56f38f9d514e4b86bd79b889a1fd6" category="inline-link-macro">ANF 표준</block>
+  <block id="78873ec8d46ffae6610437508a974c62" category="cell"><block ref="78873ec8d46ffae6610437508a974c62" category="inline-link-macro-rx"></block></block>
+  <block id="ebe38988f3aab7bae61bbd1f603f8ef4" category="inline-link-macro">ANF 프리미엄</block>
+  <block id="262554da97fff4ccb6d0f2ed70542373" category="cell"><block ref="262554da97fff4ccb6d0f2ed70542373" category="inline-link-macro-rx"></block></block>
+  <block id="7d83e72583af3d8a08a95140a5b1e3b6" category="cell">사용자 수</block>
+  <block id="742be8b47e2b32917e7a987968259cf4" category="cell">10-49</block>
+  <block id="7ded92bbd56e1e2cf180aaf70625c732" category="cell">50-249</block>
+  <block id="0e702a773d399722dd841bcde5c8be15" category="cell">250개 이상</block>
+  <block id="9dba50d3a2c2f26daddbf9d144c49772" category="cell">최소 크기</block>
+  <block id="272fce320d1d39a47ad589ea9ebc2af6" category="cell">250GiB</block>
+  <block id="09db5cf9dee1953ac746dd636e0db3e0" category="cell">4TiB</block>
+  <block id="79073619fba8242703524f16870ff858" category="cell">IOPS</block>
+  <block id="82072969a6f4a521b38eec5bfcbfa026" category="cell">최대 1,000개</block>
+  <block id="26f11596d97c80193415e41391ec3e9a" category="cell">최대 250/TiB</block>
+  <block id="69a3be734586931892217fb735943524" category="cell">최대 1,000/TiB</block>
+  <block id="9ea543fb4e345eb6592d75458c4cb8b9" category="summary">VDM 시작 소개 페이지</block>
+  <block id="0f43cd3e37e1c436acacdca2fab71789" category="doc">VDM 성공을 위한 시작 단계</block>
+  <block id="628360b99cb016f82f440ba3f28f67dd" category="section-title">VDM이란 무엇입니까?</block>
+  <block id="46f6eded4cddfc975ecf5b02b64628dc" category="paragraph">VDM(Virtual Desktop Managed Service)은 NetApp의 관리형 DaaS 솔루션으로, 가상 데스크톱 프로비저닝, 구축 및 인프라를 아웃소싱하여 사용자당 월별 요금 1회 요금으로 사용자 및 애플리케이션에 집중할 수 있습니다.</block>
+  <block id="9e8c3254392b0084af45f9288549cd6a" category="image-alt">landing.gettingstarted 3b8c5</block>
+  <block id="7e25ef1a019aa248e94eee9245e5873c" category="section-title">VDM 설정</block>
+  <block id="c675fe9704554382bdbc8e66915b32c0" category="paragraph">VDM 구축 프로젝트는 다음과 같이 구성됩니다.</block>
+  <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="inline-link-macro">필수 구성 요소</block>
+  <block id="ec43c194067748b0549f1896c5e6e878" category="list-text"><block ref="ec43c194067748b0549f1896c5e6e878" category="inline-link-macro-rx"></block></block>
+  <block id="a9c7d144b19bd8fa62601d378a40ddd8" category="list-text">고객 환경 검토 킥오프(Kick Off) 통화</block>
+  <block id="a6d1456f9736834bbdec181dd562a1e3" category="list-text">NetApp은 WVD 인프라와 작업 공간을 제공합니다</block>
+  <block id="d267f2e895454b234815f27756e8bfa3" category="list-text">대화형 라이브 교육 세션</block>
+  <block id="8b04ec4f75f0c22c4b6d210d421a717e" category="list-text">사용자 지정 WVD에 데이터, 응용 프로그램 및 사용자를 추가합니다</block>
+  <block id="f883375f8137e6f142c56d7253cc6d08" category="list-text">환경, 사용자 데스크톱 및 연결을 테스트합니다</block>
+  <block id="9388501b767b546557d8a759950da26f" category="list-text">라이브로 전환!</block>
+  <block id="d7fc8658f9e7754760fee0f4a1678e61" category="section-title">다음 단계</block>
+  <block id="55f00fa354b9aa6365e1ebf8a7b5f33b" category="paragraph">적시에 성공적으로 배포하려면 다음 단계를 수행하십시오.</block>
+  <block id="501576b716eaba3643cdb8c08168f956" category="inline-link-macro">적절한 Microsoft 365 라이선스</block>
+  <block id="c39d5292515125e905d03aec97857354" category="list-text">획득 <block ref="78b612584e382737e76ece5c25add306" category="inline-link-macro-rx"></block> 있습니다</block>
+  <block id="8d99ef921e0276d963c6fb7cfa9590d4" category="list-text">VDM 사용자 목록을 생성합니다</block>
+  <block id="9364c02e0d2095be3c95438f4e4fd602" category="list-text">응용 프로그램, 미디어, 라이센스 및 공급업체 정보 목록 작성 – 특별한 고려 사항이나 공급업체 지원이 필요할 수 있는 데이터베이스나 레거시 응용 프로그램을 기록합니다</block>
+  <block id="136212e967a2e7310317674555cf610d" category="list-text">전송해야 할 데이터를 식별합니다</block>
+  <block id="7aa38ffde78f8eb2c2324c370d860825" category="inline-link-macro">추가 필수 구성 요소</block>
+  <block id="39c5623c1f9ec8914849d6cc41187f25" category="list-text">기존 Active Directory 인스턴스와 함께 배포하는 경우 이를 검토하십시오 <block ref="cf83f1297856ffc9b6be310d7cdeab76" category="inline-link-macro-rx"></block></block>
+  <block id="9daa07991ed43a576fef187952656736" category="summary">VDM 가상 머신에 대한 도메인 액세스 확보</block>
+  <block id="602fe15b3412a0a253f98540e696d1c0" category="doc">VDM에서 도메인 관리자 자격 증명을 생성합니다</block>
+  <block id="c0f2dc7167ea702651c95c23c8e2eb5a" category="section-title">특별 권한 액세스 관리</block>
+  <block id="d7e1a322cd93b3196ed2ce03fd02d619" category="paragraph">VDM 관리자에게 "PAM Approver" 역할을 부여하면 관리자가 PAM 요청을 부여할 수 있습니다.</block>
+  <block id="b5e0fb09be70dfe486265719adc87d1c" category="paragraph">PAM 요청은 Just-In-Time 로컬 관리자 자격 증명이 충분하지 않을 때 VDM VM에서 인증하는 데 사용할 도메인 레벨 관리자 계정을 생성합니다.</block>
+  <block id="899617d12a06d268217a5883eb83b82c" category="paragraph">모든 VDM 관리자는 PAM 요청을 제출할 수 있지만 PAM 승인자 역할을 가진 관리자만 요청을 승인할 수 있습니다. PAM 승인자는 자신의 요청을 요청하고 승인할 수 있습니다.</block>
+  <block id="aea32282c28940c6ac542b7bd62a70b3" category="section-title">PAM 요청을 제출합니다</block>
+  <block id="31abc89f6fc876f29e040026e20bd6c2" category="list-title">PAM 요청 제출</block>
+  <block id="2cb738f01acc3f0c17681c8c76ab0a69" category="list-text">오른쪽 상단에서 관리자 사용자 이름으로 이동하여 "설정"을 클릭합니다.</block>
+  <block id="bd0a2a93fffc24975ba1853fa1149f5b" category="list-text">"PAM Requests(PAM 요청)" 탭을 선택합니다</block>
+  <block id="a571b504c697c594943d6e9c5c087775" category="list-text">"+추가"를 클릭합니다.</block>
+  <block id="5ba8e29ceed72746a18a29d6708840d0" category="list-text">이 자격 증명이 만료되는 기간을 선택합니다</block>
+  <block id="2c1927771abff53406ba90bdea239e3f" category="list-text">배포를 선택합니다</block>
+  <block id="2f25a0df47ff1cf7f053a4419e8a72ff" category="list-text">자격 증명을 제공할 수 있는 이메일 주소를 입력합니다. 타사(예: 공급업체)에게 도메인 자격 증명을 부여할 수 있는 모든 전자 메일 주소일 수 있습니다.</block>
+  <block id="1dbdc24971d689d0073e98af19eeb8fe" category="list-text">문자 메시지를 받을 수 있는 전화 번호를 입력합니다</block>
+  <block id="60aa2e4a9c8c74f16e29354ab59eee7a" category="list-text">로그 및 PAM 승인자가 검토할 수 있도록 메모를 입력합니다.</block>
+  <block id="5031e28239e8f60089e6ec2c48ce180e" category="list-text">"요청 추가"를 클릭합니다.</block>
+  <block id="209774dd0e6ea93eb16bd5a8817c6f79" category="section-title">PAM 요청을 승인합니다</block>
+  <block id="8d6292bd781be3efa75297b09327c5d2" category="list-title">PAM 요청을 검토 및 승인/거부하려면</block>
+  <block id="d6d7d89a00dd2cdcfae222003e03198a" category="list-text">. 오른쪽 상단에서 관리자 사용자 이름으로 이동하여 "설정"을 클릭합니다.</block>
+  <block id="1e25fde4d5df52504c3c378803f196b5" category="list-text">"PAM Requests(PAM 요청)" 탭을 선택하고 요청을 클릭합니다</block>
+  <block id="df08ce57f98ee9fe5ed9d38b2d6d2aeb" category="list-text">요청을 검토하고 "Approve(승인)" 또는 "Reject(거부)"를 클릭합니다.</block>
+  <block id="004bf02cb11b8e69065a56d3e2f499e6" category="list-text">승인/거부 결정과 관련된 메모를 입력합니다</block>
+  <block id="ba1debcf140af674383a994a011f4378" category="section-title">PAM 생성 자격 증명 사용</block>
+  <block id="138f0560a7d09acb7363aa3e31c607a0" category="paragraph">승인되면 제공된 이메일 주소로 자격 증명을 활성화하기 위한 확인 이메일이 전송됩니다.</block>
+  <block id="7206e87cd374427fb9e10cdf1670e31e" category="inline-image-macro">900,900</block>
+  <block id="546d735f3a5b13a8291f291ceca54e43" category="paragraph"><block ref="546d735f3a5b13a8291f291ceca54e43" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5455149d315bd4b66490fb089ea0b5fa" category="paragraph">"요청 활성화" 링크를 클릭하면 사용자가 다음 페이지로 이동하여 SMS를 통해 확인 코드를 보냅니다. 또한 보안 암호를 설정하라는 메시지가 표시됩니다.</block>
+  <block id="08a40eb602733fda5f16835b431f8811" category="paragraph"><block ref="08a40eb602733fda5f16835b431f8811" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9264aee8437d85fc53a0b42286f24cb4" category="paragraph">계정의 유효성을 성공적으로 확인하면 사용자는 자신의 사용자 이름으로 확인을 받습니다.</block>
+  <block id="4b0fe9652493940a58ca8d7a9f4c2cf3" category="paragraph"><block ref="4b0fe9652493940a58ca8d7a9f4c2cf3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7de5351aa3f0e1c125bbc2f8aea255b0" category="summary">VDM의 앱 그룹에 사용자 할당</block>
+  <block id="b2466ad5a9f0a0d7121744e68a49f844" category="doc">앱 그룹에 사용자 할당</block>
+  <block id="d16c04fc5ac4514bfdfbe3a54de8e738" category="section-title">사용자 할당 방법론</block>
+  <block id="cfde6c3cf9bd451a997dbc5fd9f8d36c" category="paragraph">사용자는 AD 보안 그룹을 통해 SHVM(세션 호스트 가상 머신)에 할당됩니다.</block>
+  <block id="4818e70e512f04e569bc147f99672272" category="paragraph">각 호스트 풀에 대해 작업 영역 내의 "사용자 및 그룹" 탭에 연결된 사용자 그룹이 있습니다.</block>
+  <block id="def81129d67404cd415cf4304789c9fa" category="paragraph">사용자 그룹의 이름은 작업 공간 ID(각 작업 공간에 대한 고유 3-4자리 코드)와 호스트 풀의 이름으로 지정됩니다.</block>
+  <block id="5eeef880d45bcdffcb46dc1a185c466c" category="paragraph">예를 들어 그룹 "jzsx Shared Users"는 VDM의 공유 사용자 호스트 풀에 연결됩니다. "jzsx 공유 사용자"에 추가된 모든 사용자는 "공유 사용자" 호스트 풀의 세션 호스트에 대한 액세스 권한이 할당됩니다.</block>
+  <block id="cad0242b88dfa70bcefc49b67f6c31b4" category="list-title">호스트 풀에 사용자를 할당하는 것입니다</block>
+  <block id="b48fbb3ce7b871fcd5d57edd7197dafc" category="list-text">작업 영역 내에서 "사용자 및 그룹"으로 이동합니다</block>
+  <block id="8902181431f3e2dc1b5daa9240fadf23" category="list-text">그룹 내의 사용자 목록을 편집하여 사용자를 그룹에 추가할 수 있습니다.</block>
+  <block id="6c11b65ca6c64610ec3b88be316dc5a4" category="list-text">자동화는 사용자 그룹의 구성원을 자동으로 동기화하여 사용자에게 적절한 호스트 풀, 앱 그룹 및 애플리케이션에 대한 액세스 권한을 부여합니다.</block>
+  <block id="e21bb10544386e99214ffb3d1f6f0e69" category="admonition">사용자는 하나의 앱 그룹에만 할당해야 합니다. 호스트 풀 유형(공유, VDI 또는 GPU)은 VDM에 대해 구입한 라이센스 SKU와 일치해야 합니다. 사용자 및/또는 여러 앱 그룹에 대한 할당이 잘못 조정되면 리소스 경합 문제가 발생하고 해당 환경에서 작업하는 동료들에게 영향을 줄 수 있습니다.</block>
+  <block id="8a17bedfe2ee407739d807567dc8d643" category="doc">애플리케이션 제공 방법론</block>
+  <block id="8aa58a967207a06b5c55918c6518e17f" category="paragraph">사용자는 사용자 세션이 실행 중인 SHVM(Session Host Virtual Machine)이 설치된 모든 응용 프로그램에 액세스할 수 있습니다.</block>
+  <block id="beb5d87fe3526985d13cb57799fd1448" category="paragraph">사용자는 사용자 그룹의 구성원 자격을 기준으로 SHVM 풀("호스트 풀")에 할당됩니다. 해당 호스트 풀의 모든 SHVM은 동일한 VM 이미지를 기반으로 하며, 동일한 애플리케이션을 가지고 있으며 동일한 VM 리소스에서 실행됩니다. 사용자가 연결할 때마다 현재 사용자 세션 수가 가장 적은 호스트 풀의 SHVM에 할당됩니다.</block>
+  <block id="6f19c28c9fc064fbf50be8c483387ef5" category="paragraph">VDM 관리자는 호스트 풀의 각 SHVM에서 애플리케이션을 추가하거나 제거하여 VDM 사용자가 액세스할 수 있는 애플리케이션을 제어할 수 있습니다.</block>
+  <block id="ad0fd6dc94ec49eef29883321644c80d" category="paragraph">각 SHVM에서 응용 프로그램을 추가(또는 제거)하는 작업은 각 SHVM에서 직접 수행하거나 단일 VM 이미지로 수행할 수 있으며, 이 이미지는 호스트 풀의 모든 SHVM에 배포될 수 있습니다.</block>
+  <block id="daf37e22be5944b91ad3e9f10bae946a" category="summary">VDM에서 관리자 추가 및 제거</block>
+  <block id="cd1072c0f5d3db1b2c15e15c34c852fd" category="section-title">VDM에서 관리자 추가</block>
+  <block id="a9cdcafa8b61ec6579c66a2df489614b" category="list-text">이 프로세스는 NetApp에서 처리합니다</block>
+  <block id="91e40577c319b6a01b52603f473309b3" category="list-text">다음 방법 중 하나를 사용하여 NetApp VDM 지원에 문의하십시오.</block>
+  <block id="3dcb90c689d5e13266b1241d68b0cbad" category="list-text">이메일 지원: VDSsupport@netapp.com</block>
+  <block id="88cc9e245d04dc16592a51f8acaca39e" category="list-text">전화 지원: 844.645.6789</block>
+  <block id="761897184911914403fb24eff6e9fa73" category="inline-link-macro">VDM 지원 포털</block>
+  <block id="8c0bcd4812f78591782afec72a6d71cd" category="list-text"><block ref="8c0bcd4812f78591782afec72a6d71cd" category="inline-link-macro-rx"></block></block>
+  <block id="34d259745d3da613bcc0b3adfbc639ed" category="list-text">새 관리자 계정에 대해 다음을 포함하십시오.</block>
+  <block id="fe9be8f63d5ba2087cd13852d40f6718" category="list-text">파트너 코드</block>
+  <block id="21aef67e8d12503aff027385d0a7867f" category="list-text">이름과 성</block>
+  <block id="b357b524e740bc85b9790a0712d84a30" category="list-text">이메일 주소입니다</block>
+  <block id="1ba35231b4d109955cd66ed3863f0aa1" category="inline-link-macro">관리자 권한</block>
+  <block id="6fbc6323a3bfb526f94558882d009cac" category="list-text">사용 권한이 에 나와 있는 기본 집합과 다른 경우 <block ref="2ede773ee6fbfa51f614196fcbee7730" category="inline-link-macro-rx"></block></block>
+  <block id="6dcbc4b0c3684e270a0c6cb85ab64330" category="section-title">VDM에서 관리자를 제거하는 중입니다</block>
+  <block id="b61edd6ca3ed9ef1fd846fbbb5a7743e" category="list-text">이 프로세스는 파트너가 처리합니다</block>
+  <block id="1bc0f19aeec5f7092afb1c27bae98524" category="list-text">"Admins" 탭으로 이동합니다</block>
+  <block id="da84b2cbcbf8cd7d0e828499fc7a32db" category="list-text">제거할 관리자의 오른쪽에 있는 작업 점 을 클릭합니다</block>
+  <block id="eb497ca12d0310af894bdca08a29c76a" category="list-text">"삭제"를 클릭합니다.</block>
+  <block id="7f4aaf00d8a4414e162496ba9892f69a" category="list-text">확인 상자가 나타나면 "예, 확실합니다"를 클릭합니다.<block ref="742faf550871500875b02d7ef54940f0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7aa1916e49d82631e70edd9fdc8569fc" category="list-text">궁금한 사항이 있는 경우 다음 방법 중 하나를 사용하여 NetApp VDM 지원에 문의하십시오.</block>
+  <block id="98bc530693a52fafe469f30614e8f883" category="summary">Virtual Desktop Managed Service 설명서 포털에 오신 것을 환영합니다.</block>
+  <block id="9f817877212aa8b2757f521dbf32cd41" category="doc">Virtual Desktop Managed Service Documentation(가상 데스크톱 관리 서비스 설명서</block>
+  <block id="3b878279a04dc47d60932cb294d96259" category="section-title">개요</block>
+  <block id="2637b7de7d33d19378c198b8be6838bf" category="paragraph">NetApp의 VDM(Virtual Desktop Managed Service)은 퍼블릭 클라우드에서 가상 데스크톱을 구축하고 관리하는 데 따르는 복잡성을 해소하며, VDI as a Service 플랫폼으로 제공됩니다.</block>
+  <block id="ad03304ebb58420571f6373a6c9d8ec7" category="section-title">지원을 받는 중입니다</block>
+  <block id="0b7ecd3f16fdb38fd9df7824bc8d7b1f" category="paragraph">일반 지원 업무 시간: 월-금, 오전 7:00-오후 7:00(중부 표준시).</block>
+  <block id="d13c2f018ea5180520061bfbbc26db45" category="list-text">근무 시간 이후(통화 중) 지원은 전화로 제공됩니다.</block>
+  <block id="5415e4af755fea4714f1671504efcd13" category="section-title">Windows 가상 데스크톱(WVD) 클라이언트</block>
+  <block id="dfdf288956a9f63a5bae66aff6f73337" category="inline-link-macro">Windows 클라이언트용 Microsoft WVD</block>
+  <block id="3c6a3d5491e156e43159551aea166eac" category="list-text"><block ref="3c6a3d5491e156e43159551aea166eac" category="inline-link-macro-rx"></block></block>
+  <block id="4b43e9013fc9eb09c085b7c544ded089" category="inline-link-macro">Microsoft WVD 웹 클라이언트</block>
+  <block id="7fd34e8df1747b4bff9245d9132b966b" category="list-text"><block ref="7fd34e8df1747b4bff9245d9132b966b" category="inline-link-macro-rx"></block></block>
+  <block id="b4611a2d3d5a5e3739a1c6e591c54c45" category="inline-link-macro">Android 클라이언트용 Microsoft WVD</block>
+  <block id="e171ab639221a7dd239974c2b86d2fa5" category="list-text"><block ref="e171ab639221a7dd239974c2b86d2fa5" category="inline-link-macro-rx"></block></block>
+  <block id="88e5ff73d6f89b2579347681a57888a5" category="inline-link-macro">macOS 클라이언트용 Microsoft WVD</block>
+  <block id="ff5a31bd5c49822af23db663021be551" category="list-text"><block ref="ff5a31bd5c49822af23db663021be551" category="inline-link-macro-rx"></block></block>
+  <block id="ab820e6f4b3da259f734f7719dc03beb" category="inline-link-macro">iOS 클라이언트용 Microsoft WVD</block>
+  <block id="c0f265d8b364ec0302ca37319c93f323" category="list-text"><block ref="c0f265d8b364ec0302ca37319c93f323" category="inline-link-macro-rx"></block></block>
+  <block id="f89a22674e8a92e50b2f8aad878c2dc1" category="section-title">서비스 구성 요소</block>
+  <block id="221183f642ade47cc467abe7b9812d30" category="paragraph">VDM은 NetApp과 Microsoft의 여러 기술을 통합하여 EUC 시장에서 20년 이상 학습한 Best Practice를 적용하는 공동 관리 서비스 오퍼링입니다. 선택한 부품 목록이 아래에 나열됩니다. 다양한 고객 요구 사항으로 인해 모든 구축에 모든 구성 요소가 사용되는 것은 아닙니다.</block>
+  <block id="cfaa375bf6c7f9fcc1bc04d4f30c9154" category="section-title">넷엡</block>
+  <block id="8f53b5241aa3284f9058318dcbc2504d" category="inline-link-macro">Azure NetApp Files(ANF)</block>
+  <block id="807c90ee9f6f726952c2838ef0c351e1" category="list-text"><block ref="807c90ee9f6f726952c2838ef0c351e1" category="inline-link-macro-rx"></block></block>
+  <block id="e7c7def4c520da02d9d2de3af21bfe23" category="list-text">49명 이상의 사용자가 있는 구축을 위한 데이터 스토리지 계층은 ANF를 기반으로 합니다.</block>
+  <block id="2b777d6a2e70fbbf8bc7129f2344fbdc" category="list-text">사용자 250명 미만의 구축 환경에서는 표준 성능 계층이 사용됩니다.</block>
+  <block id="f01388bdfcc7b5decd2e457dd9643b4c" category="list-text">사용자 249명 이상의 구축 환경에서는 프리미엄 성능 계층이 사용됩니다.</block>
+  <block id="43eacebb5257cc3f7ffeafcc431ace05" category="inline-link-macro">NetApp 클라우드 백업</block>
+  <block id="707d9a52c2b2c0f6bad5780695b059cb" category="list-text"><block ref="707d9a52c2b2c0f6bad5780695b059cb" category="inline-link-macro-rx"></block></block>
+  <block id="e6d64656856b343cebd019acbb40b76a" category="list-text">NetApp Cloud Backup은 ANF 스토리지 볼륨을 백업하는 데 사용됩니다.</block>
+  <block id="dc188738e6cc2e9f8314e1b95f18ebfd" category="inline-link-macro">NetApp Cloud Sync를 참조하십시오</block>
+  <block id="1fa9af60cd9be0da37c7968ddb64376a" category="list-text"><block ref="1fa9af60cd9be0da37c7968ddb64376a" category="inline-link-macro-rx"></block></block>
+  <block id="9f518c7170c02cabfafe2faf89a81c4d" category="list-text">NetApp Cloud Sync는 ANF가 데이터 스토리지 계층 기술일 때 데이터를 VDM으로 마이그레이션하는 데 사용할 수 있습니다.</block>
+  <block id="a1722ee1a41c4364dfc3dcf1cca5c81b" category="inline-link-macro">NetApp Cloud Insights를 참조하십시오</block>
+  <block id="4ee4516d2b6023b325419caa07f812a6" category="list-text"><block ref="4ee4516d2b6023b325419caa07f812a6" category="inline-link-macro-rx"></block></block>
+  <block id="91988dd1ea5b991fb85629c6b00d4540" category="list-text">NetApp Cloud Insights는 지원 및 서비스 팀이 성능 모니터링에 사용합니다.</block>
+  <block id="bf32c55b9c9938dc916aec0ea1c0284c" category="inline-link-macro">NetApp VDM 지원</block>
+  <block id="eeb24dc4a000ededfac7873179c95601" category="list-text"><block ref="eeb24dc4a000ededfac7873179c95601" category="inline-link-macro-rx"></block></block>
+  <block id="7719afad377344d8e2107f50bdf4e0f6" category="list-text">VDM에는 연중무휴 24시간 지원 및 NetApp 전담 지원 팀이 제공하는 온보딩 서비스가 포함되어 있습니다</block>
+  <block id="140864078aeca1c7c35b4beb33c53c34" category="section-title">마이크로소프트</block>
+  <block id="db518c790e08ef4681e765d4a8cb77bb" category="inline-link-macro">Azure 파일(AF)</block>
+  <block id="5d4ee9d5685d5641ce2c8c2ba4dabe0c" category="list-text"><block ref="5d4ee9d5685d5641ce2c8c2ba4dabe0c" category="inline-link-macro-rx"></block></block>
+  <block id="f4ed5596725574cbc7927eae7b6c6adb" category="list-text">사용자 수가 50명 미만인 구축 환경을 위한 데이터 스토리지 계층은 AF 기술을 기반으로 합니다. GPv2 스토리지 계정에서 "트랜잭션 최적화" 계층을 구성합니다.</block>
+  <block id="64cde2a8b64e175bcadca975c13f467d" category="list-text">49명 이상의 사용자 ANF가 있는 구축 환경에서는 이 기능이 사용됩니다.</block>
+  <block id="2d5dc75ae0469095c0637f057c402dd9" category="inline-link-macro">Azure Cloud 백업</block>
+  <block id="ec91135da0e64bcbb6a4909a510f9421" category="list-text"><block ref="ec91135da0e64bcbb6a4909a510f9421" category="inline-link-macro-rx"></block></block>
+  <block id="ba9e9d4cfd02480f0d197ed3c3df3fb1" category="list-text">Azure Cloud Backup은 AF 스토리지 볼륨 및 가상 머신을 백업하는 데 사용됩니다.</block>
+  <block id="bebb460745cf70f0fb01567618da6ace" category="inline-link-macro">Azure 파일 동기화</block>
+  <block id="1d27d66e4d1610ec85aa556b17b7a21c" category="list-text"><block ref="1d27d66e4d1610ec85aa556b17b7a21c" category="inline-link-macro-rx"></block></block>
+  <block id="c06b0209ebb258572c8ca2cb4e428d7a" category="list-text">Azure File Sync는 AF가 데이터 스토리지 계층 기술일 때 VDM으로 데이터를 마이그레이션하는 데 사용할 수 있습니다.</block>
+  <block id="5108ba6c5030a5032f1009bc8c0607c2" category="inline-link-macro">Azure Defender</block>
+  <block id="2efda18dbfc1ccfbe33cd7fafa81c028" category="list-text"><block ref="2efda18dbfc1ccfbe33cd7fafa81c028" category="inline-link-macro-rx"></block></block>
+  <block id="6a9959db688a881cbcadb8dd291008c4" category="list-text">VDM은 운영 환경의 모든 가상 머신에 대한 고급 보안 서비스인 Azure Defender를 활성화(라이센스 포함)합니다. 관리 및 관리는 Azure Security Center를 통해 고객 및/또는 해당 IT 서비스 공급자가 수행합니다. Azure Security Center 관리는 VDM에 포함된 서비스가 아닙니다.</block>
+  <block id="ed826a0ea4b8d674a29a54acb3442471" category="inline-link-macro">Azure 가상 머신</block>
+  <block id="e76162ecb5c068d6b130db8ee5211596" category="list-text"><block ref="e76162ecb5c068d6b130db8ee5211596" category="inline-link-macro-rx"></block></block>
+  <block id="a88111f39da8a7274444b588481fee26" category="list-text">VDM은 사용자 세션 및 고객 애플리케이션을 호스팅하기 위해 Windows 기반 Azure 가상 머신에 크게 의존합니다.</block>
+  <block id="01296bd76cd8185c0501d04cce7a167b" category="inline-link-macro">Azure 가상 네트워크 피어링</block>
+  <block id="3979c7c151502e46a9cc9e3c8e0c6fcc" category="list-text"><block ref="3979c7c151502e46a9cc9e3c8e0c6fcc" category="inline-link-macro-rx"></block></block>
+  <block id="9796805885a1800afe1b14adffe2cb28" category="list-text">VDM은 Azure 가상 네트워크 피어링을 활용하여 고객의 기존 AD DC(Active Directory 도메인 컨트롤러)와 통합할 수 있습니다.</block>
+  <block id="1326428c52b039fd64ab59330a06ed7a" category="inline-link-macro">Azure VPN</block>
+  <block id="5f71288630df0d16ede6551b3df106ae" category="list-text"><block ref="5f71288630df0d16ede6551b3df106ae" category="inline-link-macro-rx"></block></block>
+  <block id="7d609d9814d7e154cd65f8ecdcdbe7ae" category="list-text">VDM은 Azure 사이트 간 VPN을 활용하여 고객의 기존 AD DC(Active Directory Domain Controller)와 통합할 수 있습니다.</block>
+  <block id="f7896a449e94c533aa09253e7ec6a8e1" category="inline-link-macro">Windows 가상 데스크톱(WVD)</block>
+  <block id="1ee7e70fb1311d3977554f6ea305af4d" category="list-text"><block ref="1ee7e70fb1311d3977554f6ea305af4d" category="inline-link-macro-rx"></block></block>
+  <block id="907dd555fc3c0afb63583fc4457f11ca" category="list-text">VDM은 기본 WVD 기능을 활용하여 사용자 세션 브로커링, 인증, Windows 라이센스 등을 지원합니다.</block>
+  <block id="e1fafd2510cd146e482a585fc2356d70" category="inline-link-macro">Azure AD 연결</block>
+  <block id="47d965a1630901daa52084062865e9c6" category="list-text"><block ref="47d965a1630901daa52084062865e9c6" category="inline-link-macro-rx"></block></block>
+  <block id="d7e7636ec23a129a1ecaa66e3d557b80" category="list-text">WVD를 사용하려면 로컬 도메인(AD DC)과 Azure AD가 Azure AD Connect 응용 프로그램을 통해 동기화되어야 합니다.</block>
+  <block id="69e203f09b55e828d2192c6b402d4711" category="inline-link-macro">Microsoft 365(M365)</block>
+  <block id="85a1f43f633c5b533e51cfb59f99dda6" category="list-text"><block ref="85a1f43f633c5b533e51cfb59f99dda6" category="inline-link-macro-rx"></block></block>
+  <block id="6802bf293c3a3d6a57152760479f4d42" category="list-text">세션 호스트용 WVD 사용자 세션 및 Windows 10 Enterprise는 특정 M365 라이센스 유형을 통해 사용자에게 라이센스가 부여됩니다. 모든 VDM 사용자에게 적절한 M365 라이센스를 할당하는 것은 WVD 및 VDM 요구 사항입니다. 이 라이센스는 VDM에 포함되어 있지 않습니다. M365 라이선스를 관리하는 것은 고객 및/또는 IT 서비스 공급자의 책임입니다.</block>
+  <block id="40672ff87dc9f7a95a33c7216ee64955" category="summary">VDM에서 사용자 액세스 제거</block>
+  <block id="49c9243c88915c1393a41cd9bfdb96f1" category="doc">사용자 액세스를 제거하는 중입니다</block>
+  <block id="1896c044e89799022bf8b538b4dd6c09" category="section-title">사용자를 제거하는 중입니다</block>
+  <block id="f4219fd258da70da218e29b7aa9ce98f" category="list-title">새로운 Active Directory 구축(VDM에 대해 새 Active Directory 도메인이 생성됨)</block>
+  <block id="2b5800940254d7c3cd649bd2cc45b7b7" category="list-text">VDM에서 사용자를 삭제합니다</block>
+  <block id="f67f2cec4fbbaba4514eb9129596a00d" category="list-text">작업 영역으로 이동하여 "사용자 및 그룹" 탭을 선택하고 삭제할 사용자 옆에 있는 작업 점을 클릭한 다음 "삭제"를 클릭합니다.<block ref="49be77491de3fa79d6b69f67f8eb9945" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b801b82b5f5c4f8c12461f94512f0c19" category="list-text">삭제 지연 및 디렉터리에서 삭제 옵션이 포함된 팝업 창이 나타납니다<block ref="e4d8b0c6abbd02cd29ebc471401474f5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c96013281d49394c4634c7403a096b41" category="list-text">삭제 지연 옵션은 사용자를 삭제하기 전에 90분 정도 대기하며, 이 경우 프로세스가 취소됩니다. 이 확인란을 선택하는 것이 좋습니다.</block>
+  <block id="a6d17d9281a07ff82516c72f719bb1ec" category="list-text">디렉터리에서 삭제 옵션을 선택하면 Active Directory 사용자 계정이 삭제됩니다. 이 상자를 선택해야 합니다.</block>
+  <block id="073d48bdb0d4f50dc5fb4b34aa19a824" category="list-text">아래 방법 중 하나를 사용하여 사용자 제거를 NetApp에 알립니다</block>
+  <block id="cb97f0bec1842e8c8a2d34fe19793d1b" category="list-title">기존 Active Directory 구축(VDM이 기존 Active Directory에 연결 중)</block>
+  <block id="a7f7992bbd09f7d531e95587a1bb3f68" category="list-text">삭제 지연 및 디렉터리에서 삭제 옵션이 포함된 팝업이 나타납니다<block ref="bae6ebac53fd14801b2950e669918fa9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9d08fd81c8e53570265128157d3fff6" category="list-text">디렉터리에서 삭제 옵션을 선택하면 Active Directory 사용자 계정이 삭제됩니다. 이 상자를 선택하지 않는 것이 좋습니다. Active Directory에서 계정을 삭제하려면 조직의 사용자 계정 삭제 프로세스를 따라야 합니다.</block>
+  <block id="2997e6a5bf6be5d5c8419a3213812536" category="summary">VDM에서 사용자 액세스 추가</block>
+  <block id="d642faecdf160dfb8644fb3fa136bccb" category="doc">사용자 액세스 추가</block>
+  <block id="471f93d68756f527284bc51eaf905dd1" category="section-title">새 사용자 생성</block>
+  <block id="02c095d06a6d1cdc05103497e307bb57" category="list-text">VDS에서 사용자를 생성합니다</block>
+  <block id="276e75d878376ba6611b9767ab595d74" category="list-text">작업 영역으로 이동하여 "사용자 및 그룹" 탭을 선택하고 "추가"를 클릭한 다음 "사용자 추가"를 선택합니다.<block ref="01a7e13851148707d52a68eb54f00a1b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="87220c67c72f0d298051345c32d4deac" category="list-text">사용자 정보를 입력한 다음 "사용자 추가"를 클릭합니다.<block ref="f9a3413134fff75f5a462338940fce3a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fab5c136050045c86c6dda86d966205f" category="list-text">다음 방법 중 하나를 사용하여 추가 사용자를 NetApp에 알립니다</block>
+  <block id="fdc2b135d9efecb3e1f2b4fca11dd892" category="list-text">사용자를 호스트 풀에 할당합니다</block>
+  <block id="ad0fbbe0d18dd45378f6ca0aa2500bb1" category="list-text">사용자 및 그룹 탭에서 호스트 풀에 연결된 사용자 그룹을 클릭합니다. 예를 들어 "kift WVD Shared" 그룹은 VDM의 WVD 공유 호스트 풀에 연결됩니다. "kift WVD Shared"에 추가된 모든 사용자는 "WVD Shared" 호스트 풀에서 세션 호스트에 대한 액세스 권한을 할당합니다.<block ref="52fe872693fa4a302fecc7ac8d9409f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0d81223cb2329228b3639c112f152f34" category="list-text">사용자 상자의 오른쪽 위에 있는 편집 아이콘을 클릭하고 "사용자 추가"를 클릭합니다.<block ref="f779d10d4b5a2a12e1bbcbfb50a562cb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b5fa21f0eb2d8b7fe1bfd9c95e541389" category="list-text">추가할 사용자 옆의 확인란을 선택하고 "계속"을 클릭합니다.<block ref="fe8ce930c30018c2fed04664cd787039" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">여기</block>
+  <block id="2502824cec4d71acc93081cd6e05d3f4" category="list-text">자세한 지침은 을 참조하십시오 <block ref="c8dc0d78acf8a52218aa489a7ef1ee9d" category="inline-link-macro-rx"></block></block>
+  <block id="075f4277f2f2fd3d1dfa5fe127b63805" category="list-text">일반적으로 하는 것처럼 Active Directory에서 사용자를 만듭니다</block>
+  <block id="ea9a80a8ebede4b24a7ffcb37da35fcb" category="list-text">배포에 나열된 Active Directory 그룹에 사용자를 추가합니다<block ref="3d1e494df7d4c39ad677f1ad91e61fc8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="396f85e9c2391a975a7258e1a32ab806" category="list-text">cloudworkspace를 설정합니다</block>
+  <block id="d3a38a38525619a60766615947e2efea" category="summary">VDM 서비스 역할 및 책임</block>
+  <block id="005602cbcfd03b7cf963c6bb4a0eae8f" category="doc">VDM 서비스 역할 및 책임</block>
+  <block id="6f99cee9e9c33b41b074c633b3012168" category="summary">VDM 사전 요구 사항</block>
+  <block id="7101d756d033177353d9f5c07dc1cca0" category="doc">VDM(Virtual Desktop Managed Service) 사전 요구 사항</block>
+  <block id="4ab76886debf49d95b2a4fef582d15c7" category="section-title">M365 라이선스</block>
+  <block id="b020d0c9b32e382959cf0dea2bead748" category="paragraph">VDM은 Microsoft WVD(Windows Virtual Desktop) 기술을 사용하여 구축됩니다. WVD 전제 조건을 사용하려면 최종 사용자에게 특정 Microsoft 365(M365) 라이선스를 할당해야 합니다. 이 라이센스는 VDM 서브스크립션에 포함되지 않으며 NetApp은 이 라이센스를 판매하거나 제공하지 않습니다.</block>
+  <block id="cebd22a00d5013c15eed793e240502a6" category="paragraph">M365/WVD 라이선스 규정 준수는 고객 회사, 파트너 회사 및/또는 M365 공급업체에 계속 적용됩니다.</block>
+  <block id="19afb9d1ac9ba6fd860315f1ca7e0b69" category="inline-link-macro">여기 에서 찾을 수 있습니다</block>
+  <block id="b4235b06a6f6d504c028c18cce86b2ae" category="paragraph">VDM에 대한 WVD 라이선스를 지원하는 다양한 M365 계획이 있으며 자세한 내용은 을 참조하십시오 <block ref="a742b0ae6bcc16874b13b2550124fc06" category="inline-link-macro-rx"></block>.</block>
+  <block id="e2c95d84734b00e5ef2ef41173187dfd" category="section-title">M365/Azure AD 테넌트</block>
+  <block id="978a5d70cc4724762885eae4edefb265" category="paragraph">고객이 기존 Azure AD 테넌트를 가지고 있어야 합니다. Microsoft 365는 동일한 Azure AD 테넌트 구조를 기반으로 하므로 위의 M365 라이선스 요구 사항을 충족하는 것도 이 요구 사항을 충족합니다.</block>
+  <block id="e60603a8c091ad4ecf4f13ef038c6993" category="section-title">CSP 리셀러 관계</block>
+  <block id="97c44aa79914d250c369d31952754f92" category="paragraph">NetApp은 Microsoft와의 CSP 관계를 활용하여 VDM을 전용 Azure 구독에 구축합니다. 이 구독을 배포하려면 NetApp은 고객의 Azure AD 테넌트와 리셀러 관계를 설정해야 합니다. 고객의 Azure AD 테넌트에 대한 글로벌 관리자가 이 관계를 수락할 수 있는 위치:</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
+  <block id="76c466b535a024bf62441e55d148bff3" category="paragraph"><block ref="fa3fd739777b2eeb32cbdd79384ee355" category="inline-link-rx"></block></block>
+  <block id="28d1b9c40143d939044f58ee443457ae" category="paragraph">다중 파트너 기능은 다음과 같은 기능을 제공하지 않습니다.</block>
+  <block id="360ea3e16d3eacc3f4c40629ffacbe0f" category="list-text">고객의 기존 구독을 변경합니다</block>
+  <block id="8049eda9cbcf42194ddbf8e1247fef3a" category="list-text">고객의 기존 구독 또는 계정 소유권을 이전합니다</block>
+  <block id="31aad5340a094333d0802dc580273698" category="list-text">기존 구독에 대한 약관 또는 고객의 의무를 변경합니다</block>
+  <block id="1e95b46571474c3be681a025af16355e" category="list-text">구독에 대한 레코드 파트너 변경</block>
+  <block id="01f9d9cf2c00e8e734e6317025a5a247" category="list-text">자세한 내용:<block ref="6684da7473eb39e0e8cae311c4c6d92e" category="inline-link-rx"></block></block>
+  <block id="0fdcf23d7c1c245aaa0e4622d9b7c2cb" category="section-title">위임된 관리자 권한</block>
+  <block id="b332ccf67aea6d555c7d8ac7a19d5c27" category="paragraph">초대 링크(위)에는 위임된 관리자 권한에 대한 요청이 포함되어 있습니다. 수락하면 고객의 Azure AD 테넌트에서 NetApp 글로벌 관리자 및 헬프 데스크 관리자 역할이 부여됩니다.</block>
+  <block id="cb59dd4492601ed66800cb3e5c574545" category="section-title">가상 네트워크 범위</block>
+  <block id="457656b9ef14bd283c9ef34d425f14b6" category="paragraph">VDM은 Azure의 가상 네트워크에 구축됩니다. 이 네트워크에 사용되는 /20 IP 범위는 해당 환경의 다른 네트워크와 중복될 수 없습니다.</block>
+  <block id="2852f2aa3284e9a7c6058e6370337a56" category="paragraph">VDM 가상 네트워크와 다른 고객 네트워크 간에 네트워크 접속을 추가하는 모든 시나리오에서 다른 네트워크 IP 범위와 중복되면 VDM이 깨집니다. 따라서 완전히 사용되지 않은/20가지 범위가 VDM 전용으로 사용되는 것이 중요합니다.</block>
+  <block id="3e501301e848b677583840429ef15a66" category="paragraph">/20 네트워크 범위는 다음 IP 범위 중 하나에 있어야 합니다.</block>
+  <block id="9a209730b7f51b3e4565ad790589fc43" category="list-text">10.0.0.0 – 10.255.255.255</block>
+  <block id="14dd7fcccb4b74ca672c297d1cb6d665" category="list-text">172.16.0.0 – 172.31.255.255</block>
+  <block id="3829ec5f29f77c5b461342b2ed779339" category="list-text">192.168.0.0 – 192.168.255.255</block>
+  <block id="5cbad71b2e52d27af79f2dcc24f0c89f" category="section-title">VDM 구축 워크시트</block>
+  <block id="40ecdaa6099a435c9140cf2050e6e8ab" category="paragraph">고객/파트너는 다음 사이트에서 VDM 구축 워크시트를 작성해야 합니다.<block ref="407da3f6a76beb163cf0094e957ae19d" category="inline-link-rx"></block></block>
+  <block id="131e28f3148ad4a6d5f7dbcc7defb415" category="section-title">기존 AD 통합</block>
+  <block id="9a2d2d00cc1c8fbdd604e7514b5e31f6" category="paragraph">VDM을 기존 AD DC(Active Directory 도메인 컨트롤러)와 통합하려면 다음과 같은 몇 가지 추가 사전 요구 사항이 필요합니다.</block>
+  <block id="112b26ab610b8d0250bc550630221838" category="section-title">로컬 도메인 관리자 자격 증명</block>
+  <block id="e1a9443c6e1bae566f0e44fe64344da0" category="paragraph">통합을 설정하려면 기존 도메인에서 domainjoin 권한이 있는 로컬 도메인 관리자 계정이 필요합니다.</block>
+  <block id="67b732dc42aaffa9056d34cc477c863c" category="inline-link-macro">유틸리티</block>
+  <block id="a25c024625e73e1fcccf495c1eda46e5" category="paragraph">WVD를 사용하려면 Azure AD를 AD Connect를 사용하여 AD DC와 동기화해야 합니다. 아직 설정하지 않은 경우, 이 옵션을 선택합니다 <block ref="fd37678176db647d7dc18b476a126816" category="inline-link-macro-rx"></block> AD DC에 설치 및 구성해야 합니다.</block>
+  <block id="5017caf329e32c80bdc1556087e04c9e" category="paragraph">/==== VNET 피어링을 위한 Network Contributor 역할 /=== VPN 설정을 위한 로컬 게이트웨이 장치 관리자 권한 /== DNS 존(더 많은 기술 정보 필요) /===== 다중 도메인 포레스트, 사용자가 현재 배포 중인 도메인에 있어야 합니다</block>
+  <block id="78e405c2589d4cf70f6c45795aeb39d9" category="summary">호스트 풀 내의 세션 호스트에 애플리케이션 설치</block>
+  <block id="f312c749ffc217d197a80a28842c8749" category="doc">세션 호스트 가상 머신에 애플리케이션 설치</block>
+  <block id="8acadeccb90bf205135348e4902b9c20" category="inline-link-macro">이 기사를 참조하십시오</block>
+  <block id="28c82cd98785586b2bd9658fccd627e3" category="paragraph">이 문서에서는 SHVM에 응용 프로그램을 직접 설치하는 방법에 대해 설명합니다. VM 이미지 관리는 에서 다룹니다 <block ref="a92d27a5912cac3bb7dab83fae80db9f" category="inline-link-macro-rx"></block>.</block>
+  <block id="384aca537b9fadb1f16d457b39bc0857" category="section-title">수동 액세스</block>
+  <block id="6dee285c200485e340f5129cb6151dd9" category="paragraph">VDM 관리 포털은 모든 SHVM 및 비즈니스 서버에 대한 Just-In-Time 로컬 관리자 계정을 통해 각 VM에 직접 액세스할 수 있도록 합니다. 이 액세스는 애플리케이션을 수동으로 설치하고 다른 구성을 변경하기 위해 각 VM에 수동으로 연결하는 데 사용할 수 있습니다.</block>
+  <block id="3e2161b25ff5e0cec462c799d866da31" category="paragraph">이 기능은 작업 영역 &gt; 서버 &gt; 작업 &gt; 연결 에서 찾을 수 있습니다</block>
+  <block id="2e5ca9ce8338ed7e12248d0854d5eb10" category="paragraph"><block ref="2e5ca9ce8338ed7e12248d0854d5eb10" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="78104d1abd0bb7ff7a60f2b2646929b4" category="paragraph">도메인 관리자 자격 증명이 필요한 경우 VDM PAM(권한 액세스 관리) 기능을 사용하여 도메인 관리자 자격 증명을 생성합니다. 세부 정보는 일 수 있습니다 <block ref="6da78f0b3ed97d3f07b33982cff9a787" category="inline-link-macro-rx"></block>.</block>
+  <block id="73a293bc30e0480a720259fb32dfd519" category="section-title">VDM 자동화</block>
+  <block id="c8791f687a8eab4bfce9fb57a97220a8" category="paragraph">VDM 포털을 사용하면 "스크립트 이벤트" 섹션에 원격으로 코드를 실행할 수 있는 기능이 포함되어 있습니다.</block>
+  <block id="d5d86c8cb6f00e10e175218d58ee43f2" category="paragraph">스크립트된 이벤트 내의 리포지토리 탭에는 NetApp에서 게시한 "글로벌" 스크립트가 포함되어 있습니다. "+스크립트 추가" 버튼을 사용하여 사용자 정의 스크립트를 추가할 수 있습니다.</block>
+  <block id="b518f4246510b7b2f0d7649dfa496519" category="paragraph">Scriped Events(스크립트 기반 이벤트) 내에서 Activities(활동) 탭에는 VM 집합에 대해 스크립트를 실행하도록 하는 트리거가 포함되어 있습니다. VDM의 경우 "수동" 및 "예약" 이벤트 유형은 적절한 가상 머신 간에 스크립트를 푸시하는 것이 가장 좋습니다.</block>
+  <block id="cc6b191e16c485e0e10047bb40326fa1" category="admonition">활동에는 "이벤트 유형"이라는 사용 가능한 트리거가 많이 있습니다. VDM의 경우 "애플리케이션 설치" 및 "애플리케이션 제거" 유형이 적용되지 않습니다. VDM은 WVD 기반 서비스이므로 RDS의 설계 아키텍처를 따르므로 RDS 관련 트리거이며 VDM에 사용해서는 안 됩니다.</block>
+  <block id="9b8e7bd6e8e1746756967cb32d54e643" category="section-title">기타 자동화 도구</block>
+  <block id="768f9d7a0dd23b6ed00806d459f92faf" category="paragraph">VDM의 가상 머신은 타사 관리 툴을 사용하여 관리할 수 있습니다. 애플리케이션 변경 및 기타 VM 구성 변경 사항은 호환 가능한 툴을 통해 적용할 수 있습니다.</block>
+  <block id="0bb5e291a8346bfbe1abcdb9b33e91ca" category="summary">VDM에서 VM 이미지 업데이트 및 구축</block>
+  <block id="9236529baf2a458da85cb99992dd40f4" category="doc">VM 이미지 업데이트 및 배포</block>
+  <block id="c2583bd79f35d1fdfaf4832fc594e07a" category="paragraph">이 문서에서는 VM 이미지 관리에 대해 설명합니다. SHVM에 응용 프로그램을 직접 설치하는 방법은 에서 설명합니다 <block ref="33cb6a0164515f2f0ab6dc783a955d60" category="inline-link-macro-rx"></block>.</block>
+  <block id="ba18948a82e24b426e5a72f2d0902865" category="section-title">VM 이미지 업데이트 중</block>
+  <block id="ceaae77ce3a671c10b5ba688205bc95b" category="paragraph">SHVM에 응용 프로그램을 추가(또는 제거)하는 데 권장되는 방법은 호스트 풀에 할당된 VM 이미지를 편집하는 것입니다. VM 이미지를 사용자 지정하고 검증하면 VDM 지원 팀이 요청 시 호스트 풀의 모든 SHVM에 구축할 수 있습니다.</block>
+  <block id="e36aeacb8867d36675477317c9171a44" category="list-title">VM 이미지를 편집하는 방법</block>
+  <block id="6aba11bcdf4b1e91d230f5912ec2d899" category="list-text">VDS 포털의 배포 내에서 "Provisioning Collections(프로비저닝 컬렉션)"를 탐색합니다</block>
+  <block id="382d0f32201b4ccc098f087a2436cf06" category="list-text">업데이트할 호스트 풀과 연결된 프로비저닝 컬렉션을 클릭합니다.</block>
+  <block id="6c0ff8a5567842dfa1ee64d8b354e911" category="paragraph"><block ref="6c0ff8a5567842dfa1ee64d8b354e911" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d3df87e9f2d03852531d7f34a5baf341" category="list-text">"서버" 섹션에서 "VM 템플릿" 이름을 기록해 둡니다.</block>
+  <block id="6e61c51afb9d0a469e3c9ea737aca8b1" category="paragraph"><block ref="6e61c51afb9d0a469e3c9ea737aca8b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e012c6c08105f159bae083124447c7ae" category="paragraph"><block ref="e012c6c08105f159bae083124447c7ae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b566a76fb68de3babffe22d88e1e7c3e" category="list-text">2.a 단계에서 기록해 둔 VM 템플릿이 소스 템플릿이 되도록 서버 템플릿을 편집합니다 있습니다. "계속"을 클릭합니다.</block>
+  <block id="fe619623ee4bf5904f210a60cf63df7a" category="paragraph"><block ref="fe619623ee4bf5904f210a60cf63df7a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="76f82382f0749e5a50b762a918028ea3" category="admonition">* 다음 설정은 편집하지 마십시오: * 1. 유형 = VDI 2. 공유 드라이브 = 비어 있음 3. 최소 캐시 = 0 4. 데이터 드라이브 = 선택되지 않음 5. 스토리지 유형 = Standard_LRS</block>
+  <block id="6de3ef94ae2319b669043569d30ef7bc" category="list-text">이제 VDM 자동화는 Azure에서 임시 VM을 구축하며, 시스템 이름은 _CWT#_가 됩니다. 이 VM을 구축하는 데 25분이 걸릴 수 있습니다. 프로세스가 완료되면 상태가 "보류 중"으로 변경됩니다.</block>
+  <block id="fe057f36a544a8ec1a7f829f7f7a9fb1" category="list-text">이 VM은 사용자 지정 프로세스가 완료될 때까지 실행되므로 1일 또는 2일 이내에 VM을 구축, 사용자 지정 및 검증하는 것이 중요합니다.</block>
+  <block id="245b93e1390f56d51ea505b78bbef646" category="list-text">임시 VM이 준비되면 Provisioning Collection을 편집한 다음 서버에서 "Connect"를 클릭하여 VM에 로그온할 수 있습니다.</block>
+  <block id="d1d3afc9697d853892811e7c1dad4def" category="list-text">자격 증명을 묻는 메시지가 표시되면 VDM 관리자가 "PAM Approver" 권한을 사용하여 도메인 관리자 자격 증명을 생성할 수 있습니다.</block>
+  <block id="30541ed22d69997e599dc3adf418fc15" category="list-title">업데이트된 VM 이미지를 배포하는 방법</block>
+  <block id="c0b57b5a2501ec6d0ef82f17e00d086c" category="list-text">VM 이미지가 검증되면 VDM 지원 팀에 문의하여 이미지 새로 고침을 예약합니다.</block>
+  <block id="2208de05b3461ad36b9d2e8377cb3322" category="list-text">팀은 새 이미지를 기반으로 새 세션 호스트를 만듭니다.</block>
+  <block id="65972c6ef9da7713441d049ae0128e3c" category="list-text">필요한 경우 새 사용자를 새 호스트로 리디렉션하기 전에 새 호스트를 테스트할 시간을 조정하십시오.</block>
+  <block id="99061db7a314c44533fe9c7c7fb25761" category="list-text">준비가 되면 지원 팀이 모든 새 사용자 세션을 새 호스트로 리디렉션합니다. 연결된 사용자가 없으면 이전 호스트를 종료합니다. 이러한 이전 VM은 웜 페일오버에 대해 할당 해제 상태로 유지되지만 이러한 VM은 7일 후에 자동으로 제거됩니다.</block>
+  <block id="38e3e611d6a8eedc3b7a3bd5fea1cf33" category="section-title">SHVM을 직접 변경합니다</block>
+  <block id="37a128c0f52cb4d13156474d347e6749" category="paragraph">SHVM에서 직접 또는 사용 가능한 자동화 도구를 통해 변경할 수 있습니다. 이에 대한 자세한 내용은 에서 확인할 수 있습니다 <block ref="33cb6a0164515f2f0ab6dc783a955d60" category="inline-link-macro-rx"></block>.</block>
+  <block id="98d26d31f279875593ba96ea9fcf9a47" category="paragraph">호스트 풀에서 SHVM을 직접 변경할 때는 각 SHVM이 동일한 방식으로 구성되거나 사용자가 서로 다른 SHVM에 연결할 때 일관되지 않은 경험을 가질 수 있어야 합니다.</block>
+  <block id="d595326786cb4f40d3d1a15219ccf443" category="admonition">기본적으로 개별 SHVM은 일반적으로 고유한 데이터가 없고 표준화된 VM 이미지를 기반으로 하기 때문에 백업되지 않습니다. SHVM을 직접 사용자 지정하는 경우 지원 부서에 문의하여 호스트 풀의 SHVM 중 하나에 적용되는 백업 정책을 받으십시오.</block>
+  <block id="063086acb3cd3bc4bcd71bfb7cfb937f" category="section-title">Sysprep 문제 해결</block>
+  <block id="0d1e6919f6a6eee5c22d9157b93a54bc" category="paragraph">VDM 이미지 "Validate" 기능은 Microsoft의 Sysprep 유틸리티를 사용합니다. 정품 확인이 실패하면 가장 일반적인 원인은 Sysprep 오류입니다. 오류를 해결하려면 CWT# VM의 C:\Windows\system32\Sysprep\panther\setupact.log 경로에 있는 Sysprep 로그 파일을 시작합니다</block>
+  <block id="d7a0fdc3b195f0c6e1ed2198153b80bb" category="summary">VDS 관리자 권한 요약</block>
+  <block id="5dc26064e87f654304131fcfd3daa69a" category="doc">VDS 관리자 권한</block>
+  <block id="5b6882e7ef1f887ec6419b3daebc8735" category="section-title">관리자 권한 개요</block>
+  <block id="7e05b9cae4e3d540574176f7153fbf96" category="paragraph">VDM 관리자는 VDS 관리 포털에 액세스할 수 없습니다. VDM은 공동 관리 솔루션이기 때문에 VDM 관리자에게 사용할 수 없는 권한 세트가 있습니다. 이러한 조치는 NetApp 지원 팀에만 적용됩니다. 권한 제한으로 인해 수행할 수 없는 조치가 필요한 경우 지원 부서에 지원을 요청하십시오.</block>
+  <block id="d05e9f08eecf734428d35a1fcedffb90" category="section-title">계정 유형 설정</block>
+  <block id="7cd4109429c8312a89ac1f49934f3ccf" category="paragraph">VDM admin 계정에는 기본적으로 다음 설정이 있습니다.</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">유형</block>
+  <block id="6b66a61fa66288a9a7ad6474d2e686ec" category="cell">기본값</block>
+  <block id="f4c6f851b00d5518bf888815de279aba" category="cell">참고</block>
+  <block id="d5e3e97669ced4708d68d647e525ce9e" category="cell">기술 계정</block>
+  <block id="f8320b26d30ab433c5a54546d21f414c" category="cell">거짓</block>
+  <block id="cf1b576e701e43c9c13c3f0208d89387" category="cell">NetApp Support에 요청할 경우 변경될 수 있습니다. 활성화하면 VDS 포털을 통해 VM에 연결할 때 자격 증명을 묻는 메시지가 표시됩니다. 비활성화되면 VDS 포털을 통해 테넌트 VM에 연결할 때 관리자가 자동으로 인증됩니다(자동 생성된 로컬 관리자 계정 사용). 관리자는 플랫폼 서버 VM에 연결할 때 자격 증명을 묻는 메시지가 표시됩니다.</block>
+  <block id="49cc3c60e5e92840d647161b1a0d5674" category="inline-link-macro">PAM 승인자</block>
+  <block id="ed7ed8349364aaa897c69891d2a45419" category="cell"><block ref="ed7ed8349364aaa897c69891d2a45419" category="inline-link-macro-rx"></block></block>
+  <block id="f827cf462f62848df37c5e1e94a4da74" category="cell">참</block>
+  <block id="8ed2ba64fcd0132ae97f3a42e8532166" category="cell">NetApp Support에 요청할 경우 변경될 수 있습니다. 모든 고객은 PAM 승인자로 활성화된 관리자 계정이 하나 이상 있어야 합니다.</block>
+  <block id="c69eca844828e06e0640b3d2a0a3c143" category="cell">사용자 지원</block>
+  <block id="cc03a2c33646dc588261f08a09cc9095" category="cell">이 기능은 VDM에는 적용되지 않습니다.</block>
+  <block id="dc43bfde4556ec8545b0aa64ed23837b" category="cell">섀도 사용자</block>
+  <block id="87c9d6a3251c3a06635ba622ff81145a" category="cell">NetApp Support에 요청할 경우 변경될 수 있습니다. 이 옵션을 설정하면 관리자가 최종 사용자의 세션에 연결하여 최종 사용자 지원을 제공하기 위해 표시되는 내용을 확인할 수 있습니다.</block>
+  <block id="26ab6a271aedb1fff35392d6cf869e3b" category="cell">MFA가 활성화되었습니다</block>
+  <block id="84e6972e06fa7b02bb1b7d57bc33d18c" category="cell">VDM 관리 포털에 대한 관리자의 액세스 권한은 기본 제공 MFA를 사용하여 보호해야 합니다. SMS 및/또는 이메일 방법이 지원됩니다.</block>
+  <block id="7fcdb550ca4f1e48f367deba0c3ff630" category="section-title">관리자 계정 권한</block>
+  <block id="72699bb96a95dff4248c8236e66e1193" category="paragraph">VDM admin 계정에는 기본적으로 다음과 같은 권한이 있습니다.</block>
+  <block id="e55f75a29310d7b60f7ac1d390c8ae42" category="cell">활동입니다</block>
+  <block id="4351cfebe4b61d8aa5efa1d020710005" category="cell">보기</block>
+  <block id="7dce122004969d56ae2e0245cb754d35" category="cell">편집</block>
+  <block id="f2a6c498fb90ee345d997f888fce3b18" category="cell">삭제</block>
+  <block id="ec211f7c20af43e742bf2570c3cb84f9" category="cell">추가</block>
+  <block id="e3afed0047b08059d0fada10f400c1e5" category="cell">관리자</block>
+  <block id="521c36a31c2762741cf0f8890cbe05e3" category="cell">켜짐</block>
+  <block id="d15305d7a4e34e02489c74a5ef542f36" category="cell">꺼짐</block>
+  <block id="55c32b406a415642c4be28bb7f15e18f" category="cell">관리 계정 추가 및/또는 관리 권한 변경은 NetApp Support에서 처리합니다.</block>
+  <block id="55897b2ee79066418cbb79cd09d7de56" category="cell">앱 서비스</block>
+  <block id="4cfff72719609c16d511a3037d4a6781" category="cell">앱 서비스 기능 세트는 VDM에서 지원되지 않는 기능입니다.</block>
+  <block id="1ddf333c6654f7f89c739dddfb4cc429" category="cell">응용 프로그램</block>
+  <block id="9d1fc783a2a3cae6f5113ecc305826ef" category="inline-link-macro">이미지를 업데이트하고 배포합니다</block>
+  <block id="fa54b0f3b62ce93c357e436e8a9a9a57" category="cell">VDS의 응용 프로그램 기능 세트는 RDS와 관련이 있습니다. VDM은 WVD 기반 서비스이며 애플리케이션 관리는 이 기능을 통해 처리되지 않습니다. 을 참조하십시오 <block ref="a532c9f084f46c6a855d757a074bb9f3" category="inline-link-macro-rx"></block> VDM에 대한 애플리케이션 제공에 대한 자세한 내용은 를 참조하십시오.</block>
+  <block id="b06c94565d768dd75535120f2f8482a7" category="cell">감사</block>
+  <block id="0f558243fbf45f1cd840fff01957f57b" category="cell">클라이언트</block>
+  <block id="d4130240f822c63ce2fe56c9525a16a0" category="cell">클라이언트 생성/제거는 NetApp 지원에 의해 처리됩니다.</block>
+  <block id="3081015fddfcd25b52903a5dc112ca7c" category="cell">적합합니다</block>
+  <block id="04fd763440a9d9b21f290ecd48769379" category="cell">배포 생성/제거는 NetApp 지원에 의해 처리됩니다.</block>
+  <block id="483a9d9cfd5caf508318528d7d33ee55" category="cell">방화벽 규칙</block>
+  <block id="60c7502b5c40479908aed919a94c1786" category="cell">폴더</block>
+  <block id="a37ede293936e29279ed543129451ec3" category="cell">그룹</block>
+  <block id="02ebd0b80e8dfe739d455ae3325ce3e3" category="cell">사용자 그룹 삭제는 NetApp Support에서 처리합니다. 특정 사용자 그룹이 필요합니다</block>
+  <block id="fd6df34ee4e7642c02ced6012028f6b8" category="cell">파트너가 재판매할 수 있습니다</block>
+  <block id="84b1175bc23ed9e1d51a477c4e6ea2af" category="cell">파트너 기능 세트는 VDM에서 지원되지 않는 기능입니다. 테넌트 목록을 표시하는 데 필요한 권한을 봅니다.</block>
+  <block id="5760353c204c96a4ad1c2a433433f44c" category="cell">프로비저닝 템플릿</block>
+  <block id="ee8f950230eb6736fe74838884276d10" category="cell">이미지 생성/제거는 NetApp Support에서 처리됩니다.</block>
+  <block id="c91c7b93c28cd18741b71f727ee81ee3" category="cell">보고서</block>
+  <block id="ddcf50c29294d4414f3f7c1bbc892cb5" category="cell">리소스</block>
+  <block id="8fde96b6b53ed8ff01b171b2558707ac" category="cell">리소스 설정은 NetApp Support에서 처리합니다.</block>
+  <block id="78054cd2f54e3e84c28c8b0c14457ef6" category="cell">스크립트 이벤트</block>
+  <block id="ac659513b2353187192e88c5d1988228" category="cell">서버</block>
+  <block id="025d4c0374ab8ff0ebbdfed77eadf7b8" category="cell">서버 생성/제거 설정은 NetApp Support에서 처리합니다.</block>
+  <block id="aa1315a19149418839bbbc0f0063228b" category="cell">서비스 보드</block>
+  <block id="f4f70727dc34561dfde1a3c529b6205c" category="cell">설정</block>
+  <block id="f9aae5fda8d810a29f12d1e61b4ab25f" category="cell">사용자</block>
+  <block id="d5e92609cf510f5f97ac326e907a0540" category="cell">작업 공간</block>
+  <block id="8c541e8ad3aab98d9c2dbac2472ab7e2" category="cell">작업 공간 생성/제거는 NetApp Support에서 처리됩니다.</block>
+  <block id="0254b4a00a794d40ac59967a8fdbee36" category="sidebar">VDM 설명서</block>
+  <block id="bf647454e36069fd16f1a7a35cf6a865" category="sidebar">시작하기</block>
+  <block id="cf1ace6c8363604069581ea6bf9184b7" category="sidebar">서비스 요약</block>
+  <block id="130ddfce9c28453883ccfe2da8b6d5ac" category="sidebar">자습서</block>
+  <block id="ab9cffca9a784227a73f68923d4eaa2e" category="sidebar">응용 프로그램을 설치합니다</block>
+  <block id="bc3b078bb1277873f2454c615089dd7c" category="sidebar">배포 VM 이미지를 업데이트합니다</block>
+  <block id="80d4e33eb5b2f3446ea718da47a8df44" category="sidebar">앱 그룹에 사용자를 할당합니다</block>
+  <block id="be23cb36ea7e7c431648affa1db4d34b" category="sidebar">도메인 관리자 자격 증명을 가져옵니다</block>
+  <block id="b2ea58473050d845231730d4a0ee13f3" category="sidebar">사용자 액세스 추가</block>
+  <block id="731bcdce0a7b844ed7b28fc80a338f4f" category="sidebar">사용자 액세스를 제거합니다</block>
+  <block id="f7dca0ff3aa4294b3f0d90f8edcaec5d" category="sidebar">관리자 추가/제거</block>
+  <block id="063eef420fb2709abeb35146c37743ab" category="sidebar">VDM FAQ를 참조하십시오</block>
+</blocks>
