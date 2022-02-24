@@ -17,7 +17,7 @@ NetApp의 VDM(Virtual Desktop Managed Service)은 퍼블릭 클라우드에서 �
 
 == 지원을 받는 중입니다
 
-이메일 지원: VDSsupport@netapp.com
+이메일 지원: support@spotpc.netapp.com
 
 전화 지원: 844.645.6789
 
