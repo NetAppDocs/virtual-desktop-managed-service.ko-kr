@@ -5,6 +5,7 @@ summary: Virtual Desktop Managed Service 설명서 포털에 오신 것을 환�
 keywords:  
 ---
 = Virtual Desktop Managed Service Documentation(가상 데스크톱 관리 서비스 설명서
+:allow-uri-read: 
 
 
 
